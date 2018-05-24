@@ -29,17 +29,25 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //TODO: completar lo que falta
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.holder,parent,false);
+        ViewHolder vh = new ViewHolder(v,this.listener);
+        v.setOnClickListener(vh);
+        return vh;
+
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         //TODO: completar lo que falta
-
-
+        Modelo m = this.contactos.get(position);
+        holder.apellido.setText(m.getApellido());
+        holder.nombre.setText(m.getNombre());
+        holder.telefono.setText(m.getTelefono());
     }
 
     @Override
     public int getItemCount() {
+        return this.contactos.size();
         //TODO: completar lo que falta
     }
 

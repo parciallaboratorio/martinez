@@ -5,6 +5,7 @@ package ar.edu.utn.fra.lab5.a1erparcial;
  */
 
 public class Modelo {
+
     public Modelo(String nombre, String apellido, String telefono) {
         Nombre = nombre;
         Apellido = apellido;
